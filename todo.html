@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+<form method="post" action="add">
+    Task:<input name="task">
+    <input type="submit" value="add">
+</form>
+<ol>
+    <#list tasks as task>
+        <li>${task.taskName}</li>
+    </#list>
+    <!--<li>Wake up</li>-->
+    <!--<li>Take over the world</li>-->
+</ol>
+</body>
+</html>
