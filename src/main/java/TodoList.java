@@ -21,14 +21,21 @@ public class TodoList {
 //        return id;
     }
 
-    public boolean delete(int id) {
-        for (Task taskObject : todoList) {
-            if (taskObject.getId() == id) {
-                todoList.remove(taskObject);
+    public boolean delete(int id) throws SQLException {
+        try(Connection c = DriverManager.getConnection("jdbc:h2:~/test")){
+            try(PreparedStatement ps = c.prepareStatement("delete from todo where id=(?)")){
+                ps.setString(1,Integer.toString(id));
+                ps.executeUpdate();
                 return true;
             }
         }
-        return false;
+//        for (Task taskObject : todoList) {
+//            if (taskObject.getId() == id) {
+//                todoList.remove(taskObject);
+//                return true;
+//            }
+//        }
+//        return false;
     }
 
     public List<Task> view() throws SQLException {
@@ -39,11 +46,11 @@ public class TodoList {
                    while(rs.next()){
                        int id=rs.getInt(1);
                        String text = rs.getString(2);
-                       todoList.add(new Task(id,text));
+                       list.add(new Task(id,text));
                    }
                }
             }
         }
-        return todoList;
+        return list;
     }
 }

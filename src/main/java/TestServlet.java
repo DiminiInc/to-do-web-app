@@ -97,7 +97,11 @@ public class TestServlet extends HttpServlet {
                 e.printStackTrace();
             }
         if (whatID != null && whatID.length() > 0)
-            list.delete(Integer.parseInt(whatID));
+            try {
+                list.delete(Integer.parseInt(whatID));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         resp.sendRedirect("/");
     }
 }

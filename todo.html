@@ -8,9 +8,13 @@
     Task:<input name="task">
     <input type="submit" value="add">
 </form>
+<form method="post" action="remove">
+    Remove task:<input name="taskID">
+    <input type="submit" value="remove">
+</form>
 <ol>
     <#list tasks as task>
-        <li>${task.taskName}</li>
+        <li>${task.taskName}(id:${task.id})</li>
     </#list>
     <!--<li>Wake up</li>-->
     <!--<li>Take over the world</li>-->
