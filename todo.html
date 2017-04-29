@@ -1,6 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
     <title>To-Do List</title>
 </head>
 <body>
@@ -12,9 +13,12 @@
     Remove task:<input name="taskID">
     <input type="submit" value="remove">
 </form>
+<img src="img.png">
 <ol>
     <#list tasks as task>
-        <li>${task.taskName}(id:${task.id})</li>
+        <li>${task.taskName}(id:${task.id}) <form method="post" action="remove">
+            <button name="taskRemove" type="submit" value="remove?id=${task.id}">Remove task</button>
+        </form></li>
     </#list>
     <!--<li>Wake up</li>-->
     <!--<li>Take over the world</li>-->

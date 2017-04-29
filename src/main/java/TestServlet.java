@@ -90,6 +90,7 @@ public class TestServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String what = req.getParameter("task");
         String whatID = req.getParameter("taskID");
+        String whatRemove = req.getParameter("taskRemove");
         if (what != null && what.length() > 0)
             try {
                 list.add(what);
@@ -102,6 +103,15 @@ public class TestServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        if (whatRemove != null)
+        {
+            try {
+                whatRemove=whatRemove.replace("remove?id=","");
+                list.delete(Integer.parseInt(whatRemove));
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         resp.sendRedirect("/");
     }
 }
