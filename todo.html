@@ -1,27 +1,42 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+    <link type="text/css" rel="stylesheet"
+          href="https://sites.google.com/site/diminiincupdates/todoresources/stylesheet.css">
     <title>To-Do List</title>
 </head>
 <body>
+<div id="header">
+    <img src="https://sites.google.com/site/diminiincupdates/todoresources/ToDoLogo.png">To-Do List
+</div>
 <form method="post" action="add">
-    Task:<input name="task">
-    <input type="submit" value="add">
+    <span>Enter task:</span><input id="inputField" name="task" placeholder="join Dimini Inc.">
+    <input id="addButton" type="submit" value="add">
 </form>
-<form method="post" action="remove">
-    Remove task:<input name="taskID">
-    <input type="submit" value="remove">
-</form>
-<img src="img.png">
+<!--<form method="post" action="remove">-->
+    <!--Remove task:<input name="taskID">-->
+    <!--<input type="submit" value="remove">-->
+<!--</form>-->
 <ol>
     <#list tasks as task>
-        <li>${task.taskName}(id:${task.id}) <form method="post" action="remove">
-            <button name="taskRemove" type="submit" value="remove?id=${task.id}">Remove task</button>
-        </form></li>
+        <li>
+            <table>
+                <tr>
+                    <td>${task.taskName}<!--(id:${task.id})--></td>
+                    <td class="removeButtonCell" ><form method="post" action="remove">
+                        <input name="taskRemove" type="submit" value="remove?id=${task.id}"></input>
+                    </form></td>
+                </tr>
+            </table>
+
+
+        </li>
     </#list>
     <!--<li>Wake up</li>-->
     <!--<li>Take over the world</li>-->
 </ol>
+<div id="footer">
+    To-Do List v.0.4.<br>©<a href="http://dimini.tk">Dimini Inc.</a>, 2017
+</div>
 </body>
 </html>
