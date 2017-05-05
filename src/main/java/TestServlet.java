@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -45,6 +47,11 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String uri = req.getRequestURI();
+        if (uri.endsWith(".css")) {
+            Files.copy(Paths.get("." + uri), resp.getOutputStream());
+            return;
+        }
         //Template t=cfg.getTemplate("todo.html");
 //        StringBuilder buf = new StringBuilder();
 //        List<Task> tasks = list.view();
