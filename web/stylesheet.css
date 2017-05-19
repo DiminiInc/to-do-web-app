@@ -1,0 +1,229 @@
+html
+{
+	text-align: center;
+	background-color:#eee;
+	font-size: 175%;
+}
+
+span{
+	vertical-align: middle;
+	font-size: 175%;
+}
+
+form{
+	margin:10px;
+}
+
+ol form{
+	display:inline-block;
+	margin:auto;
+}
+
+ol{
+	list-style-type: none;
+	padding:0px;
+}
+
+table{
+	 width:100%;
+	 padding:5px;
+}
+
+td{
+	text-align: center;
+	font-size: 150%;
+}
+
+.removeButtonCell{
+	width:50px;
+}
+
+ol input{
+	width:25px;
+	height:25px;
+	vertical-align: middle;
+	background-image: url('ToDoDelete.png');
+	background-size:25px 25px;
+	border: 0px;
+	background-color: transparent;
+	text-indent: -99999px;
+	cursor: pointer;
+}
+
+ol input:hover{
+	background-image: url('ToDoDelete-hover.png');
+	background-size:25px 25px;
+}
+
+ol li{
+	margin: 10px;
+	background-color:#f5f5f5;
+	box-shadow: 5px 5px 20px #888888;
+}
+
+
+#inputfield{
+	width:800px;
+	height:50px;
+	font-size: 125%;
+    vertical-align: middle;
+}
+
+#inputfield::placeholder {
+  color: lightgray;
+}
+
+#addButton{
+	height:45px;
+	width:45px;
+	vertical-align: middle;
+	background-image: url('ToDoAdd.png');
+	background-size:45px 45px;
+	border: 0px;
+	background-color: transparent;
+	text-indent: -99999px;
+	cursor: pointer;
+}
+
+#addButton:hover{
+	background-image: url('ToDoAdd-hover.png');
+	background-size:45px 45px;
+}
+
+#header{
+	font-size: 225%;
+	font-weight:bold;
+}
+#header img{
+	height:50px;
+	width:50px;
+}
+
+#footer{
+	font-size: 100%;
+}
+
+
+
+body
+{
+	margin:0px;
+	padding:0px;
+}
+
+#header body,#header div,#header dl,#header dt,#header dd,#header ul,#header ol,#header li,#header h1,#header h2,#header h3,#header h4,#header h5,#header h6,#header pre,#header form,#header fieldset,#header input,#header textarea,#header p,#header blockquote,#header th,#header td
+{
+	margin:0;
+	padding:0;
+}
+
+#header table
+{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+#header fieldset,#header img
+{
+	border:0;
+}
+
+#header address,#header caption,#header cite,#header code,#header dfn,#header th,#header var
+{
+	font-style:normal;
+	font-weight:normal;
+}
+
+#header caption,#header th
+{
+	text-align:left;
+}
+
+#header #header h1,#header h2,#header h3,#header h4,#header h5,#header h6
+{
+	font-size:100%;
+	font-weight:normal;
+}
+
+#header q:before,#header q:after
+{
+	content:'';
+}
+
+#header abbr,#header acronym
+{
+	border:0;
+}
+
+#header
+{
+	text-align:center;
+	background-color:#ddd;
+	padding:1px;
+	padding-top:8px;
+}
+
+#header a
+{
+	text-decoration:none;
+	color:#000;
+}
+
+#header li
+{
+	list-style: none;
+}
+
+#site
+{
+	margin: auto;
+}
+
+#site_content
+{
+	position:inherit;
+	max-width:1000px;
+	margin:auto;
+}
+
+
+#footer
+{
+	text-align:center;
+	background-color:#ddd;
+}
+
+#footer ul
+{
+	margin:0;
+	padding:0;
+}
+
+#footer li
+{
+	display:inline;
+}
+
+#footer a
+{
+	text-decoration:none;
+	color:#000;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+#footer a:hover
+{
+	text-decoration:underline;
+}
+
+#footer img
+{
+	height:16px;
+}
+
+#footer a.nopadding-link
+{
+	padding-right:0px;
+	padding-left:0px;
+}

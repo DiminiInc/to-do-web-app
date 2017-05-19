@@ -20,5 +20,6 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-io:9.4.2.v20170220" level="project" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.26-incubating" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:1.4.195" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
   </component>
 </module>

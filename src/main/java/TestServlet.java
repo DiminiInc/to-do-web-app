@@ -1,4 +1,5 @@
 import freemarker.cache.FileTemplateLoader;
+import freemarker.core.HTMLOutputFormat;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -26,6 +27,7 @@ public class TestServlet extends HttpServlet {
     {
         try {
             cfg.setTemplateLoader(new FileTemplateLoader(new File(".")));
+            cfg.setOutputFormat(HTMLOutputFormat.INSTANCE);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,10 +50,10 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = req.getRequestURI();
-        if (uri.endsWith(".css")) {
-            Files.copy(Paths.get("." + uri), resp.getOutputStream());
-            return;
-        }
+//        if (uri.endsWith(".css")) {
+//            Files.copy(Paths.get("." + uri), resp.getOutputStream());
+//            return;
+//        }
         //Template t=cfg.getTemplate("todo.html");
 //        StringBuilder buf = new StringBuilder();
 //        List<Task> tasks = list.view();

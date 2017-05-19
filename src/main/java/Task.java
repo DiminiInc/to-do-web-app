@@ -15,6 +15,6 @@ public class Task {
     }
 
     public String getTaskName() {
-        return taskName;
+        return taskName == null ? "" : taskName;
     }
 }
