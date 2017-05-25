@@ -18,7 +18,7 @@ public class RestServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.service(req, resp);
+        //super.service(req, resp);
         resp.setCharacterEncoding("UTF-8");
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
@@ -36,6 +36,12 @@ public class RestServlet extends HttpServlet {
                 e.printStackTrace();
             }
         } else if (uri.startsWith("/rest/delete")) {
+            int id=Integer.parseInt(req.getParameter("id"));
+            try {
+                list.delete(id);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
         } else if (uri.startsWith("/rest/view")){
             try {

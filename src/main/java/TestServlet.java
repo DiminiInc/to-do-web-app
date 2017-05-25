@@ -49,7 +49,7 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String uri = req.getRequestURI();
+        //String uri = req.getRequestURI();
 //        if (uri.endsWith(".css")) {
 //            Files.copy(Paths.get("." + uri), resp.getOutputStream());
 //            return;
