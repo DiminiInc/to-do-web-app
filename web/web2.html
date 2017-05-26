@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    function display(data) {
+        var html = '';
+        $.each(data, function(index, elem) {
+            html += '<li>' + elem.taskName + '<button onclick="removeItem(' + elem.id + ')">Удалить</button></li>';
+        })
+        $('#taskList').html(html);
+    }
+
+    function loadList() {
+        $.post('/rest/view', display);
+    }
+
+    function removeItem(id) {
+        $.post('/rest/delete?id=' + id, {}, display);
+    }
+
+    function addItem() {
+        var t = $('#newTask').val();
+        $.post('/rest/add?text=' + encodeURI(t), {}, display);
+    }
+
+    $(function() {
+        loadList();
+    })
+</script>
+<body>
+<input id="newTask"><button onclick="addItem()">Добавить</button>
+<ol id="taskList"></ol>
+</body>
+</html>
